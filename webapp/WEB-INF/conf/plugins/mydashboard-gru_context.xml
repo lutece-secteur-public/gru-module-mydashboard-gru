@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+                 http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <!-- Bills -->
+    
+    <bean id="mydashboard-gru.mydashboardBillsComponent" class="fr.paris.lutece.plugins.mydashboard.modules.gru.web.MyDashboardBillsComponent" />
+    
+    <bean id="mydashboard-gru.bill1" class="fr.paris.lutece.plugins.mydashboard.modules.gru.business.Bill">
+        <property name="subject">
+            <value>Facture Famille Mai-Juin 2015</value>
+        </property>
+        <property name="billingDate">
+            <value>10 Juillet 2015</value>
+        </property>
+        <property name="paymentDueDate">
+            <value>10 septembre 2015</value>
+        </property>
+        <property name="invoiceAmount">
+            <value>302,50 €</value>
+        </property>
+        <property name="documentUrl">
+            <value>#</value>
+        </property>
+        <property name="paymentUrl">
+            <value>#</value>
+        </property>
+    </bean>
+
+    <bean id="mydashboard-gru.listBills" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="mydashboard-gru.bill1" />
+            </list>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="mydashboard-gru.billService" class="fr.paris.lutece.plugins.mydashboard.modules.gru.service.MokeBillService" />
+
+</beans>

@@ -1,0 +1,28 @@
+<legend>#i18n{module.mydashboard.gru.component.bills.description}</legend>
+<div>
+    <table class="table">
+        <tr>
+            <th>Facture</th>
+            <th>Date d'&eacute;mission</th>
+            <th>Date limite de paiement</th>
+            <th>Montant</th>
+            <th>Actions</th>
+        </tr>
+        <#list bills_list as bill>
+        <tr>
+            <td>${bill.subject}</td>
+            <td>${bill.billingDate}</td>
+            <td>${bill.paymentDueDate}</td>
+            <td>${bill.invoiceAmount}</td>
+            <td>
+                <a class="btn btn-sm" href=" ${bill.paymentUrl}" title="Voir la facture">
+                    <i class="fa fa-eye"></i>
+                </a>
+                <a class="btn btn-sm" href=" ${bill.paymentUrl}" title="Payer la facture">
+                    <i class="fa fa-money"></i>
+                </a>
+            </td>
+        </tr>
+        </#list>
+    </table>
+</div>
