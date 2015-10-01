@@ -40,5 +40,71 @@
     </bean>
     
     <bean id="mydashboard-gru.billService" class="fr.paris.lutece.plugins.mydashboard.modules.gru.service.MokeBillService" />
+    
+    <!-- Newsletters -->
+    <bean id="mydashboard-gru.mydashboardNewslettersComponent" class="fr.paris.lutece.plugins.mydashboard.modules.gru.web.MyDashboardNewsLettersComponent" />
+    
+    <bean id="mydashboard-gru.newsletter1" class="fr.paris.lutece.plugins.mydashboard.modules.gru.business.Newsletter">
+        <property name="name">
+            <value>L'essentiel à Paris</value>
+        </property>
+        <property name="description">
+            <value>Actus qui agitent la Ville, bons plans anti plan-plan, aides et services de la Mairie... Pour ne rien manquer des événements et des infos essentielles de Paris, c’est LA newsletter indispensable. Vous allez voir, on s’y attache très vite...</value>
+        </property> 
+        <property name="subscribersCount">
+            <value>28017</value>
+        </property>
+        <property name="imageUrl">
+            <value>https://connect.paris.fr/application/views/ressources/pics/news1.jpg</value>
+        </property>
+        <property name="registered">
+            <value>0</value>
+        </property>
+        <property name="subscribeUrl">
+            <value>#</value>
+        </property>
+        <property name="unsubscribeUrl">
+            <value>#</value>
+        </property>
+        <property name="previewUrl">
+            <value>https://connect.paris.fr/newsletter/apercu/paris_fr</value>
+        </property>
+    </bean>    
+
+    <bean id="mydashboard-gru.newsletter2" class="fr.paris.lutece.plugins.mydashboard.modules.gru.business.Newsletter">
+        <property name="name">
+            <value>Que faire à Paris ?</value>
+        </property>
+        <property name="description">
+            <value>Que faire à Paris ?, le site pour trouver bons plans, activités, idées originales et sélections sur mesure. Recevez toutes les semaines le meilleur de Paris : brocantes, gratuit, enfants, culture, sport, week-end... </value>
+        </property> 
+        <property name="subscribersCount">
+            <value>27602</value>
+        </property>
+        <property name="imageUrl">
+            <value>https://connect.paris.fr/application/views/ressources/pics/news2.jpg</value>
+        </property>
+        <property name="registered">
+            <value>1</value>
+        </property>
+        <property name="subscribeUrl">
+            <value>#</value>
+        </property>
+        <property name="unsubscribeUrl">
+            <value>#</value>
+        </property>
+        <property name="previewUrl">
+            <value>https://connect.paris.fr/newsletter/apercu/quefaire</value>
+        </property>
+    </bean>    
+    
+    <bean id="mydashboard-gru.listNewsletters" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="mydashboard-gru.newsletter1" />
+                <ref bean="mydashboard-gru.newsletter2" />
+            </list>
+        </constructor-arg>
+    </bean>
 
 </beans>
