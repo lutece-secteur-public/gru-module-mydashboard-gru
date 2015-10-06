@@ -1,22 +1,21 @@
 
-#Avatar module for MyDashboard
+#Module Gestion Relation Usager pour MyDashboard
 
 ##Introduction
 
-This module let manage the avatar of the MyLutece user into its dashboard MyDashboard
-
-##Configuration
-
-Into file mydasboard-avatar.properties configure the modification URL of the avatar.
-
-```
-
-                        mydashboard-avatar.modify.url=http://gravatar.com
-                    
-```
+Ce module propose d'intégrer au tableau de bord d'un usager des blocs standards concernant des fonctionnalités communes d'interaction avec sonadministration :
+ 
+* appels téléphoniques
+* messages électroniques
+* alertes
+* factures
+* abonnements aux newsletters
 
 
-[Maven documentation and reports](http://dev.lutece.paris.fr/plugins/module-mydashboard-avatar/)
+Le module propose des formats et des API pour alimenter ces données.
+
+
+[Maven documentation and reports](http://dev.lutece.paris.fr/plugins/module-mydashboard-gru/)
 
 
 

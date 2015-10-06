@@ -4,17 +4,22 @@
         <title>Avatar module for MyDashboard</title>
     </properties>
     <body>
-        <section name="Avatar module for MyDashboard">
+        <section name="Module Gestion Relation Usager pour MyDashboard">
             <subsection name="Introduction">
-                <p>This module let manage the avatar of the MyLutece user into its dashboard MyDashboard</p>
-            </subsection>
-            <subsection name="Configuration">
-                <p>Into file mydasboard-avatar.properties configure the modification URL of the avatar.</p>
-                <div class="code">
-                    <pre>
-                        mydashboard-avatar.modify.url=http://gravatar.com
-                    </pre>
-                </div>
+                <p>Ce module propose d'intégrer au tableau de bord d'un usager des blocs standards
+                    concernant des fonctionnalités communes d'interaction avec son
+                    administration : 
+                    <ul>
+                        <li>appels téléphoniques</li>
+                        <li>messages électroniques</li>
+                        <li>alertes</li>
+                        <li>factures</li>
+                        <li>abonnements aux newsletters</li>
+                    </ul>                    
+                </p>
+                <p>
+                    Le module propose des formats et des API pour alimenter ces données. 
+                </p>
             </subsection>
         </section>
     </body>

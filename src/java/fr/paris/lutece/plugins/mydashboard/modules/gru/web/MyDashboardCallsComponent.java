@@ -33,9 +33,9 @@
  */
 package fr.paris.lutece.plugins.mydashboard.modules.gru.web;
 
-import fr.paris.lutece.plugins.mydashboard.modules.gru.business.Bill;
-import fr.paris.lutece.plugins.mydashboard.modules.gru.service.IBillService;
-import fr.paris.lutece.plugins.mydashboard.modules.gru.service.MokeBillService;
+import fr.paris.lutece.plugins.mydashboard.modules.gru.business.Call;
+import fr.paris.lutece.plugins.mydashboard.modules.gru.service.ICallService;
+import fr.paris.lutece.plugins.mydashboard.modules.gru.service.MokeCallService;
 import fr.paris.lutece.plugins.mydashboard.service.MyDashboardComponent;
 import fr.paris.lutece.portal.service.i18n.I18nService;
 import fr.paris.lutece.portal.service.security.LuteceUser;
@@ -53,26 +53,26 @@ import javax.servlet.http.HttpServletRequest;
 
 
 /**
- * MyDashboardBillsComponent
+ * MyDashboardCallsComponent
  */
-public class MyDashboardBillsComponent extends MyDashboardComponent
+public class MyDashboardCallsComponent extends MyDashboardComponent
 {
-    private static final String DASHBOARD_COMPONENT_ID = "mydashboard-gru.billsComponent";
-    private static final String MESSAGE_DASHBOARD_COMPONENT_DESCRIPTION = "module.mydashboard.gru.component.bills.description";
-    private static final String TEMPLATE_DASHBOARD_COMPONENT = "skin/plugins/mydashboard/modules/gru/bills_component.html";
-    private static final String MARK_BILLS_LIST = "bills_list";
+    private static final String DASHBOARD_COMPONENT_ID = "mydashboard-gru.callsComponent";
+    private static final String MESSAGE_DASHBOARD_COMPONENT_DESCRIPTION = "module.mydashboard.gru.component.calls.description";
+    private static final String TEMPLATE_DASHBOARD_COMPONENT = "skin/plugins/mydashboard/modules/gru/calls_component.html";
+    private static final String MARK_BILLS_LIST = "calls_list";
 
     
-//    private static IBillService _billService = (IBillService) SpringContextService.getBean( "mydashboard-gru.billService" );
-      private static IBillService _billService = new MokeBillService();
+//    private static ICallService _billService = (ICallService) SpringContextService.getBean( "mydashboard-gru.billService" );
+      private static ICallService _billService = new MokeCallService();
     
     @Override
     public String getDashboardData( HttpServletRequest request )
     {
         LuteceUser user = SecurityService.getInstance().getRegisteredUser(request);
-        List<Bill> listBills = _billService.getBills( user );
+        List<Call> listCalls = _billService.getCalls( user );
         Map<String, Object> model = new HashMap<String, Object>(  );
-        model.put( MARK_BILLS_LIST, listBills );
+        model.put( MARK_BILLS_LIST, listCalls );
         HtmlTemplate template = AppTemplateService.getTemplate( TEMPLATE_DASHBOARD_COMPONENT,
                 LocaleService.getDefault(  ), model );
 

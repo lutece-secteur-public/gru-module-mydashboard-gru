@@ -106,5 +106,67 @@
             </list>
         </constructor-arg>
     </bean>
+    
+    <!-- Alerts -->
+    <bean id="mydashboard-gru.mydashboardAlertsComponent" class="fr.paris.lutece.plugins.mydashboard.modules.gru.web.MyDashboardAlertsComponent" />
+    
+    <bean id="mydashboard-gru.alert1" class="fr.paris.lutece.plugins.mydashboard.modules.gru.business.Alert">
+        <property name="name">
+            <value>Conservatoires</value>
+        </property>    
+        <property name="category">
+            <value>Culture, loisirs et formations</value>
+        </property>    
+        <property name="subscribersCount">
+            <value>8575</value>
+        </property>
+        <property name="registered">
+            <value>0</value>
+        </property>
+    </bean>
+    
+     <bean id="mydashboard-gru.alert2" class="fr.paris.lutece.plugins.mydashboard.modules.gru.business.Alert">
+        <property name="name">
+            <value>Cours municipaux</value>
+        </property>    
+        <property name="category">
+            <value>Culture, loisirs et formations</value>
+        </property>    
+        <property name="subscribersCount">
+            <value>19891</value>
+        </property>
+        <property name="registered">
+            <value>1</value>
+        </property>
+    </bean>
+    
+    <bean id="mydashboard-gru.listAlerts" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="mydashboard-gru.alert1" />
+                <ref bean="mydashboard-gru.alert2" />
+            </list>
+        </constructor-arg>
+    </bean>
+ 
+    <!-- Calls -->
+    <bean id="mydashboard-gru.mydashboardCallsComponent" class="fr.paris.lutece.plugins.mydashboard.modules.gru.web.MyDashboardCallsComponent" />
+
+    <bean id="mydashboard-gru.listCalls" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- Mails -->
+    <bean id="mydashboard-gru.mydashboardMailsComponent" class="fr.paris.lutece.plugins.mydashboard.modules.gru.web.MyDashboardMailsComponent" />
+    
+    <bean id="mydashboard-gru.listMails" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+            </list>
+        </constructor-arg>
+    </bean>
 
 </beans>

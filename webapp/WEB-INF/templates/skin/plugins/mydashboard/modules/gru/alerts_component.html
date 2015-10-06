@@ -1,0 +1,14 @@
+<legend>#i18n{module.mydashboard.gru.component.alerts.description}</legend>
+<div>
+    <ul>
+        <#list alerts_list as alert>
+        <li> ${alert.category} ${alert.name} (${alert.subscribersCount}) 
+        <#if alert.registered == 0 >
+        <a href="#" class="btn btn-primary">S'abonner</a>
+        <#else>
+        <a href="#" class="btn btn-primary">Se d&eacute;sabonner</a>
+        </#if>
+        </li>
+        </#list>
+    </ul>
+</div>
