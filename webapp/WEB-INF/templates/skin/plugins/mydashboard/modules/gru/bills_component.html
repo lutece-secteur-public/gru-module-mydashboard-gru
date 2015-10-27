@@ -1,28 +1,50 @@
-<legend>#i18n{module.mydashboard.gru.component.bills.description}</legend>
-<div>
-    <table class="table">
-        <tr>
-            <th>Facture</th>
-            <th>Date d'&eacute;mission</th>
-            <th>Date limite de paiement</th>
-            <th>Montant</th>
-            <th>Actions</th>
-        </tr>
-        <#list bills_list as bill>
-        <tr>
-            <td>${bill.subject}</td>
-            <td>${bill.billingDate}</td>
-            <td>${bill.paymentDueDate}</td>
-            <td>${bill.invoiceAmount}</td>
-            <td>
-                <a class="btn btn-primary btn-sm" href=" ${bill.paymentUrl}" title="Voir la facture">
-                    <i class="fa fa-eye"></i>
-                </a>
-                <a class="btn btn-primary btn-sm" href=" ${bill.paymentUrl}" title="Payer la facture">
-                    <i class="fa fa-money"></i>
-                </a>
-            </td>
-        </tr>
-        </#list>
-    </table>
+<div class="row">
+  <div class="layout-wrapper border-orange1-mydashboard">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mydashboard-component">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingMyBills">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseMyBills" aria-expanded="true" aria-controls="collapseMyBills">
+                <span class="glyphicon glyphicon-plus"></span> #i18n{module.mydashboard.gru.component.bills.description}
+              </a>
+				<i class="fa fa-money"></i>
+				<span class="pull-right badge">${bills_list?size}</span>
+            </h4>
+          </div>
+          <div id="collapseMyBills" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingMyBills">
+            <div class="panel-body">
+              <div class="row">
+                <table class="table">
+                  <tr>
+                    <th>Facture</th>
+                    <th>Date d'&eacute;mission</th>
+                    <th>Date limite de paiement</th>
+                    <th>Montant</th>
+                    <th>Actions</th>
+                  </tr>
+                  <#list bills_list as bill>
+                    <tr>
+                      <td>${bill.subject}</td>
+                      <td>${bill.billingDate}</td>
+                      <td>${bill.paymentDueDate}</td>
+                      <td>${bill.invoiceAmount}</td>
+                      <td>
+                        <a class="btn btn-primary btn-sm" href=" ${bill.paymentUrl}" title="Voir la facture">
+                          <i class="fa fa-eye"></i>
+                        </a>
+                        <a class="btn btn-primary btn-sm" href=" ${bill.paymentUrl}" title="Payer la facture">
+                          <i class="fa fa-money"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  </#list>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

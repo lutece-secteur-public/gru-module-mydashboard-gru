@@ -1,5 +1,27 @@
-<legend>#i18n{module.mydashboard.gru.component.mails.description}</legend>
-<div>
-        <#list mails_list as mail>
-        </#list>
+<div class="row">
+  <div class="layout-wrapper border-green1-mydashboard">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mydashboard-component">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingMyEmails">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseMyEmails" aria-expanded="true" aria-controls="collapseMyEmails">
+                <span class="glyphicon glyphicon-plus"></span> #i18n{module.mydashboard.gru.component.mails.description}</legend>
+              </a>
+             <i class="fa fa-envelope-o"></i>
+				<span class="pull-right badge">${mails_list?size}</span>
+            </h4>
+          </div>
+          <div id="collapseMyEmails" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingMyEmails">
+            <div class="panel-body">
+              <div class="row">
+                <#list mails_list as mail>
+                </#list>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

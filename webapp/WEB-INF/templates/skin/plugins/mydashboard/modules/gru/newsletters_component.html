@@ -1,31 +1,55 @@
-<legend>#i18n{module.mydashboard.gru.component.newsletters.description}</legend>
-<div>
-    <table class="table">
-        <#list newsletters_list as newsletter>
-        <div class="row">
-            <div class="col-md-6">
-                <img class="img-responsive" src="${newsletter.imageUrl}" alt="${newsletter.name}" />
+<div class="row">
+  <div class="layout-wrapper border-turquoise1-mydashboard">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mydashboard-component">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingMyNewsletters">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseMyNewsletters" aria-expanded="true" aria-controls="collapseMyNewsletters">
+                <span class="glyphicon glyphicon-plus"></span> #i18n{module.mydashboard.gru.component.newsletters.description}
+              </a>
+              <i class="fa fa-newspaper-o"></i>
+			  <span class="pull-right badge">${newsletters_list?size}</span>
+            </h4>
+          </div>
+          <div id="collapseMyNewsletters" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingMyNewsletters">
+            <div class="panel-body">
+              <div class="row">
+                <table class="table">
+                  <#list newsletters_list as newsletter>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <img class="img-responsive" src="${newsletter.imageUrl}" alt="${newsletter.name}" />
+                      </div>
+                      <div class="col-md-5">
+                        <!-- <h3>${newsletter.name}</h3> -->
+                        <p>${newsletter.description}</p>
+                        <p>
+                          <span class="badge pull-right">${newsletter.subscribersCount} abonn&eacute;s</span>
+                        </p>
+                        <p>
+                          <a href="${newsletter.previewUrl}">
+                            <strong>>> Voir le dernier num&eacute;ro</strong>
+                          </a>
+                        </p>
+                        <p>
+                          Apr&egrave;s avoir lu les conditions
+                          <#if newsletter.registered=0>
+                            <a href="${newsletter.subscribeUrl}" class="btn btn-primary pull-right">S'abonner</a>
+                            <#else>
+                              <a href="${newsletter.unsubscribeUrl}" class="btn btn-danger pull-right">Se d&eacute;sabonner</a>
+                          </#if>
+                        </p>
+                      </div>
+                    </div>
+                    <br>
+                  </#list>
+                </table>
+              </div>
             </div>
-            <div class="col-md-5">
-                <!-- <h3>${newsletter.name}</h3> -->
-                <p>${newsletter.description}</p>
-                <p>
-                <span class="badge pull-right" >${newsletter.subscribersCount} abonn&eacute;s</span>
-                </p>
-                <p>
-                    <a href="${newsletter.previewUrl}"><strong>>> Voir le dernier num&eacute;ro</strong></a>
-                </p>
-                <p>
-                    Apr&egrave;s avoir lu les conditions    
-                <#if newsletter.registered = 0 >
-                    <a href="${newsletter.subscribeUrl}" class ="btn btn-primary pull-right">S'abonner</a>
-                <#else>
-                    <a href="${newsletter.unsubscribeUrl}" class ="btn btn-danger pull-right">Se d&eacute;sabonner</a>
-                </#if>
-                </p>
-             </div>
+          </div>
         </div>
-        <br>
-        </#list>
-    </table>
+      </div>
+    </div>
+  </div>
 </div>

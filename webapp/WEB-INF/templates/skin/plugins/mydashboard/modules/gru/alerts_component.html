@@ -1,14 +1,40 @@
-<legend>#i18n{module.mydashboard.gru.component.alerts.description}</legend>
-<div>
-    <ul>
-        <#list alerts_list as alert>
-        <li> ${alert.category} ${alert.name} (${alert.subscribersCount}) 
-        <#if alert.registered == 0 >
-        <a href="#" class="btn btn-primary">S'abonner</a>
-        <#else>
-        <a href="#" class="btn btn-primary">Se d&eacute;sabonner</a>
-        </#if>
-        </li>
-        </#list>
-    </ul>
+<div class="row">
+  <div class="layout-wrapper border-tertiary-variant-mydashboard">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mydashboard-component">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingMyAlerts">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseMyAlerts" aria-expanded="true" aria-controls="collapseMyAlerts">
+                  <span class="glyphicon glyphicon-plus"></span> #i18n{module.mydashboard.gru.component.alerts.description}
+              </a>
+              <i class="fa fa-exclamation-triangle"></i>
+			  <span class="pull-right badge color-tertiary-background">${alerts_list?size}</span>
+            </h4>
+          </div>
+          <div id="collapseMyAlerts" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingMyAlerts">
+            <div class="panel-body">
+              <div class="row">
+
+                <#list alerts_list as alert>
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+						<div class="alert-component color-tertiary-background-variant">
+					${alert.category}<br />
+					<span style="font-weight:600; font-size:18px;">${alert.name} (${alert.subscribersCount})</span><br /><br />
+                    <#if alert.registered==0>
+                     <a href="#" class="btn btn-primary">S'abonner</a>
+                      <#else>
+                       <a href="#" class="btn btn-primary">Se d&eacute;sabonner</a>
+                    </#if>
+						</div>
+					</div>
+				</#list>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,5 +1,27 @@
-<legend>#i18n{module.mydashboard.gru.component.calls.description}</legend>
-<div>
-        <#list calls_list as call>
-        </#list>
+<div class="row">
+	<div class="layout-wrapper border-secondary-variant-mydashboard">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mydashboard-component">
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingMyCalls">
+						<h4 class="panel-title">
+							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseMyCalls" aria-expanded="true" aria-controls="collapseMyCalls">
+								<span class="glyphicon glyphicon-plus"></span> #i18n{module.mydashboard.gru.component.calls.description}</legend>
+							</a>
+							<i class="fa fa-phone"></i>
+							<span class="pull-right badge">${calls_list?size}</span>
+						</h4>
+					</div>
+					<div id="collapseMyCalls" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingMyCalls">
+						<div class="panel-body">
+							<div class="row">
+								<#list calls_list as call>
+								</#list>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
