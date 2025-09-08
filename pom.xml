@@ -32,7 +32,7 @@
         <dependency>
             <artifactId>plugin-mydashboard</artifactId>
             <groupId>fr.paris.lutece.plugins</groupId>
-            <version>[1.0.0,)</version>
+            <version>[1.0.0,1.9.9)</version>
             <type>lutece-plugin</type>
         </dependency>
     </dependencies>
